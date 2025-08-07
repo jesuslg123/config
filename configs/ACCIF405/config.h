@@ -21,10 +21,10 @@
 
 #pragma once
 
-#define FC_TARGET_MCU     STM32F405
+#define FC_TARGET_MCU        STM32F405
 
-#define BOARD_NAME        ACCIF405
-#define MANUFACTURER_ID   CUST
+#define BOARD_NAME           ACCIF405
+#define MANUFACTURER_ID      FOSS
 
 #define USE_ACC
 #define USE_GYRO
@@ -59,7 +59,6 @@
 #define GYRO_1_EXTI_PIN      PC4
 #define GYRO_1_CS_PIN        PA4
 #define GYRO_1_SPI_INSTANCE  SPI1
-#define GYRO_1_ALIGN CW0_DEG
 
 #define SPI1_SCK_PIN         PA5
 #define SPI1_SDI_PIN         PA6
@@ -107,6 +106,12 @@
 #define UART6_TX_PIN         PC6
 #define UART6_RX_PIN         PC7
 
+// MOTORS PINOUT
+#define MOTOR1_PIN           PA9
+#define MOTOR2_PIN           PA8
+#define MOTOR3_PIN           PC9
+#define MOTOR4_PIN           PC8
+
 // TIMERS
 #define TIMER_PIN_MAPPING \
     TIMER_PIN_MAP( 0, PA9 , 1,  1) \
@@ -115,34 +120,24 @@
     TIMER_PIN_MAP( 3, PC8 , 1,  0) \
     TIMER_PIN_MAP( 4, PB3 , 1,  0)
 
-// MOTORS PINOUT
-#define MOTOR1_PIN           PA9
-#define MOTOR2_PIN           PA8
-#define MOTOR3_PIN           PC9
-#define MOTOR4_PIN           PC8
-
 #define ADC1_DMA_OPT         1
 
-// BARO I2C
-#define BARO_I2C_INSTANCE I2CDEV_1
-#define MAG_I2C_INSTANCE I2CDEV_1
+//I2C
+#define BARO_I2C_INSTANCE   I2CDEV_1
+#define MAG_I2C_INSTANCE    I2CDEV_1
 
 #define I2C1_SCL_PIN         PB8
 #define I2C1_SDA_PIN         PB9
 
 // USERS
 #define PINIO1_PIN           PB1
-#define PINIO1_BOX 40
-#define PINIO1_CONFIG 129
+#define PINIO1_BOX           40
+#define PINIO1_CONFIG        129
 
 // DEFAULTS
 #define DEFAULT_BLACKBOX_DEVICE         BLACKBOX_DEVICE_FLASH
 #define DEFAULT_CURRENT_METER_SOURCE    CURRENT_METER_ADC
 #define DEFAULT_VOLTAGE_METER_SOURCE    VOLTAGE_METER_ADC
 #define DEFAULT_VOLTAGE_METER_SCALE     102
-#define DEFAULT_DSHOT_BURST DSHOT_DMAR_OFF
-#define DEFAULT_DSHOT_BITBANG DSHOT_BITBANG_OFF
-
-// DISABLED
-// #define INVERTER_PIN_UART1   PC0
-// #define ESCSERIAL_PIN        PB9
+#define DEFAULT_DSHOT_BURST             DSHOT_DMAR_OFF
+#define DEFAULT_DSHOT_BITBANG           DSHOT_BITBANG_OFF
